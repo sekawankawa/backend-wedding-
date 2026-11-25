@@ -1,14 +1,14 @@
 services:
   postgres-db:
     image: postgres:16-alpine
-    container_name: wedding
-    restart: unless-stopped
+    container_name: weddingbe
+    restart: always
     environment:
-      POSTGRES_USER: ${DB_USERNAME:-root}
-      POSTGRES_PASSWORD: ${DB_PASSWORD:-change-me}
-      POSTGRES_DB: ${DB_DATABASE:-wedding}
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: secret
+      POSTGRES_DB: wedding
     ports:
-      - "${DB_PORT:-5434}:5432"
+      - "5436:5432"
     volumes:
       - postgres_data_volume:/var/lib/postgresql/data
 

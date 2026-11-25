@@ -36,10 +36,10 @@ import { DashboardModule } from './dashboard/dashboard.module.js';
       useFactory: (config: ConfigService) => ({
         type: 'postgres' as const,
         host: config.get<string>('DB_HOST', 'localhost'),
-        port: Number(config.get<string>('DB_PORT', '5434')),
+        port: Number(config.get<string>('DB_PORT', '5436')),
         username: config.get<string>('DB_USERNAME', 'root'),
         password: config.get<string>('DB_PASSWORD', 'secret'),
-        database: config.get<string>('DB_DATABASE', 'wedding'),
+        database: config.get<string>('DB_DATABASE', 'weddingbe'),
         entities: ALL_ENTITIES,
         synchronize: config.get<string>('NODE_ENV') !== 'production',
       }),
